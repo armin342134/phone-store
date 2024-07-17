@@ -542,14 +542,4 @@ let searchInput = document.querySelector(".search");
 let searchBtn = document.querySelector(".search-btn");
 let displaysearch = document.querySelector(".display-search");
 
-let findsearch = null
-
-for(let i)
-
-displaysearch.innerHTML = searchInput.value;
-// console.log(products[].name);
-searchBtn.addEventListener("click", () => {
-  if (searchInput.value == products.name) {
-    open(`${products.page}`, "_top");
-  }
-});
+let findsearch = null;
