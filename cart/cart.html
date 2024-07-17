@@ -1,0 +1,263 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="https://kit.fontawesome.com/718fedc490.js" crossorigin="anonymous"></script>
+
+    <style>
+      .cart-item {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container-header">
+        <div class="item-right">
+          <i class="fa-brands fa-apple"></i>
+          <h2>موبایل صالحی</h2>
+
+        </div>
+
+        <div class="item-center">
+          <form action="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="search" type="text" placeholder="جستوجوی محصولات ..." >
+            <select class="select">
+              <option value="">همه دسته ها</option>
+              <option value="">همه گوشی ها</option>
+              <option value="">اپل</option>
+              <option value="">سامسونگ</option>
+              <option value="">شیایومی</option>
+              <option value="">نوکیا</option>
+              <option value="">تی سی ال</option>
+              <option value="">داریا</option>
+
+            </select>
+          </form>
+
+        </div>
+
+              <div class="item-left">
+              <div class="login">
+                 <button class="login-btn">ورود به حساب کاربری</button>
+                </div>
+                <div class="cart">
+                  <a href="cart/cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                  </a>
+                </div>
+
+              </header>
+              <div class="menu">
+              <nav class="nav-menu">
+                <ul>
+                  <li><a href="">فروشگاه</a>
+                    <ul>
+                      <li><a href="../pages/IPHONE/iphone-products.html"  >آیفون</a></li>
+                      <li><a href="#samsung">سامسونگ</a></li>
+                      <li><a href="#xiaomi">شیایومی</a></li>
+                      <li><a href="#nokia">نوکیا</a></li>
+                      <li><a href="">هدفون بلوتوثی</a></li>
+                      <li><a href="">ساعت هوشمند</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="../gesti.html">فروش اقساطی</a></li>
+                  <li><a href="../login-page/login-account.html">حساب کاربری</a></li>
+                  <li><a href="../cart/cart.html">سبد خرید</a></li>
+                  <li><a href="../contact us/contact.html">تماس با ما</a></li>
+                </ul>
+              </nav>
+              </div>
+    <div class="roww">
+      <div class="col-md-12">
+        <div class="cart">
+          <h2 class="cart__title">سبد خرید</h2>
+          <div class="cart__line"></div>
+          <div class="cart__items"></div>
+          <div class="roww cart__total-price"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="logo-btn">
+        <div class="logo">
+          <i class="fa-brands fa-apple"></i>
+          <h1>موبایل صالحی</h1>
+        </div>
+        <div class="btn-up">
+          <div>
+            <a href="#header" >بازگشت به بالای صفحه</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="phone">
+        <ul>
+          <li>هفت روز هفته ، ۲۴ ساعت شبانه‌روز پاسخگوی شما هستیم.</li>
+          <li>شماره تلفن: <a href="">09910450537</a></li>
+          <li>اینستاگرام: <a href="">Mobile.salehi_</a></li>
+        </ul>
+    
+      </div>
+    
+      <div class="footer-services">
+        <div class="services">
+          <div>
+            <a href="">
+              <img src="../images/iconfinder_ic_dhl_delivery_5761436.png" alt="">
+              <span>تحویل اکسپرس</span>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="../images/iconfinder_247_24-7_phone_service_support_call_4014702.png" alt="">
+              <span>پشتیبانی ۲۴ ساعته</span>
+            </a>
+          </div>
+          <div>  <a href="">
+              <img src="../images/iconfinder_currency_dollar_currency_money_4229510.png" alt="">
+              <span>پرداخت آنلاین</span>
+            </a></div>
+          <div>  <a href="">
+              <img src="../images/iconfinder_ic_round_return_5760423.png" alt="">
+              <span>۷ روز ضمانت بازگشت</span>
+            </a></div>
+          <div>  <a href="">
+              <img src="../images/iconfinder_verified-check-secured-legal-certified_3209199.png" alt="">
+              <span>ضمانت اصل بودن</span>
+            </a></div>
+        </div>
+        <div class="etemad">
+    <div>
+      <img src="../images/enamad_icon_text_color_blue_275.png" alt="">
+    </div>
+        </div>
+      </div>
+      <div class="copy-right">
+        <div>
+        <p>
+          استفاده از مطالب فروشگاه اینترنتی موبایل صالحی فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق موبایل صالحی می‌باشد. Copyright © 2022 - 2024
+          </p>
+        </div>
+    
+      </div>
+    </div>    
+    <script>
+      let cart = {
+        item: [],
+        total: 0,
+      };
+
+      const randercartitem = () => {
+        let cartdiv = document.querySelector(".cart__items");
+        cartdiv.innerHTML = " ";
+        const totalpriceEl = document.querySelector(".cart__total-price");
+        let totalprice = 0;
+        if (cart.item.length === 0) {
+          cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
+        }
+        cart.item.forEach((item) => {
+          totalprice += item.total;
+          cartdiv.innerHTML += `
+        <div class="cart__item">
+        <div class="col-md-4">
+          <button class="cart__item-remove"  onclick="removefromcart( '${item.name}' ) ; removelocal('${item.name}')">حذف</button>
+        </div>
+        <div class="col-md-4">
+          <div class="qty">${item.qty}</div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="cart__item-title">${item.name}</h3>
+        </div>
+      </div>
+
+        `;
+        });
+        totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
+      };
+
+      const addtocart = (productindex) => {
+        const product = products[productindex];
+
+        let existingProduct = false;
+        let newcartitems = cart.item.reduce((state, item) => {
+          if (item.name === product.name) {
+            existingProduct = true;
+
+            const newitem = {
+              ...item,
+              qty: item.qty + 1,
+              total: (item.qty + 1) * item.price,
+            };
+            return [...state, newitem];
+          }
+          return [...state, item];
+        }, []);
+        if (!existingProduct) {
+          newcartitems.push({
+            ...product,
+            qty: 1,
+            total: product.price,
+          });
+        }
+        cart = {
+          ...cart,
+          item: newcartitems,
+        };
+        localStorage.setItem("cartbox", JSON.stringify(cartbox));
+        randercartitem();
+      };
+
+      const loadCart = () => {
+        const savedCart = localStorage.getItem("cartbox");
+        if (savedCart) {
+          cart = JSON.parse(savedCart);
+        } else {
+          cart = { item: [] }; // مقدار پیش‌فرض اگر سبد خرید خالی باشد
+        }
+
+        // رندر کردن آیتم‌های سبد خرید
+        randercartitem();
+      };
+
+      // فراخوانی تابع loadCart هنگام بارگذاری صفحه
+      window.onload = loadCart();
+
+      const removelocal = () => {
+        localStorage.removeItem("cartbox");
+      };
+
+      const removefromcart = (productname) => {
+        const newcartitems = cart.item.reduce((state, item) => {
+          if (item.name === productname) {
+            const newitem = {
+              ...item,
+              qty: item.qty - 1,
+              total: (item.qty - 1) * item.price,
+            };
+            if (newitem.qty > 0) {
+              return [...state, newitem];
+            } else {
+              return state;
+            }
+          }
+          return [...state, item];
+        }, []);
+        cart = {
+          ...cart,
+          item: newcartitems,
+        };
+        randercartitem();
+      };
+      randercartitem();
+    </script>
+    <!-- <script src="../app.js"></script> -->
+  </body>
+</html>

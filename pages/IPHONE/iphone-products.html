@@ -1,0 +1,264 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محصولات آیفون</title>
+    <link rel="stylesheet" href="../../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../styles/style.css" />
+    <script src="https://kit.fontawesome.com/718fedc490.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+        <div class="container-header">
+          <div class="item-right">
+            <i class="fa-brands fa-apple"></i>
+            <h2>موبایل صالحی</h2>
+  
+          </div>
+  
+          <div class="item-center">
+            <form action="">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input class="search" type="text" placeholder="جستوجوی محصولات ..." >
+              <select class="select">
+                <option value="">همه دسته ها</option>
+                <option value="">همه گوشی ها</option>
+                <option value="">اپل</option>
+                <option value="">سامسونگ</option>
+                <option value="">شیایومی</option>
+                <option value="">نوکیا</option>
+                <option value="">تی سی ال</option>
+                <option value="">داریا</option>
+  
+              </select>
+            </form>
+  
+          </div>
+  
+                <div class="item-left">
+                <div class="login">
+                   <button class="login-btn">ورود به حساب کاربری</button>
+                  </div>
+                  <div class="cart">
+                    <a href="cart/cart.html">
+                      <i class="fa-solid fa-cart-shopping"></i>
+  
+                    </a>
+                  </div>
+  
+                </header>
+                <div class="menu">
+                <nav class="nav-menu">
+                  <ul>
+                    <li><a href="">فروشگاه</a>
+                      <ul>
+                        <li><a href="#iphone">آیفون</a></li>
+                        <li><a href="#samsung">سامسونگ</a></li>
+                        <li><a href="#xiaomi">شیایومی</a></li>
+                        <li><a href="#nokia">نوکیا</a></li>
+                        <li><a href="">هدفون بلوتوثی</a></li>
+                        <li><a href="">ساعت هوشمند</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="../../gesti.html">فروش اقساطی</a></li>
+                    <li><a href="../../login-page/login-account.html">حساب کاربری</a></li>
+                    <li><a href="../../cart/cart.html">سبد خرید</a></li>
+                    <li><a href="../../contact us/contact.html">تماس با ما</a></li>
+                  </ul>
+                </nav>
+                </div>
+                <div class="container">
+                    <div class="row" id="iphone">
+                      <div><i class="fas fa-shopping-bag"></i> <h2>محصولات آیفون</h2></div>
+                      <div class="col-md-12">
+                        <div class="products">
+                          
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "iPhone 13",
+          price: 500000,
+          image: "../../images/iphone/iphone-13-Apple-3-.jpg",
+          page: "pageip13.html",
+        },
+        {
+          id: 2,
+          name: "iPhone13Pro",
+          price: 750000,
+          image: "../../images/iphone/iphone-13-Pro-Apple-.jpg",
+          page: "page-13pro.html",
+        },
+        {
+          id: 3,
+          name: "iPhone13ProMax",
+          price: 850000,
+          image: "../../images/iphone/iphone-13-Pro-Max-Apple-3-.jpg",
+          page: "page-13promax.html",
+        },
+        {
+          id: 4,
+          name: "iPhone14",
+          price: 750000,
+          image: "../../images/iphone/14BB.webp",
+        },
+        {
+          id: 5,
+          name: "iPhone14Pro",
+          price: 750000,
+          image: "../../images/iphone/14PRO.webp",
+        },
+        {
+          id: 6,
+          name: "iPhone14ProMax",
+          price: 750000,
+          image: "../../images/iphone/14PROMAX.webp",
+        },
+        {
+          id: 7,
+          name: "iPhone15",
+          price: 480000,
+          image: "../../images/iphone/15B.webp",
+        },
+        {
+          id: 8,
+          name: "iPhone15ProMax",
+          price: 750000,
+          image: "../../images/iphone/15.webp",
+        },
+      ];
+      const randerproduct = () => {
+        const productdiv = document.querySelector(".products");
+        productdiv.innerHTML = " ";
+        products.forEach((item, index) => {
+          productdiv.innerHTML += ` 
+     <div class="product" >
+    <div class="product__image">
+      <img src=${item.image} alt="" />
+    </div>
+    <a class="product__title" href="${item.page}">${item.name}</a>
+    <h3 class="product__price">${item.price} تومان</h3>
+    <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+  </div>
+  `;
+        });
+      };
+      const randercartitem = () => {
+        let cartdiv = document.querySelector(".cart__items");
+        cartdiv.innerHTML = " ";
+        const totalpriceEl = document.querySelector(".cart__total-price");
+        let totalprice = 0;
+        if (cart.item.length === 0) {
+          cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
+        }
+        cart.item.forEach((item) => {
+          totalprice += item.total;
+          cartdiv.innerHTML += `
+    <div class="cart__item">
+    <div class="col-md-4">
+      <button class="cart__item-remove"  onclick="removefromcart( '${item.name}') ;removelocal('${item.name}') ">حذف</button>
+    </div>
+    <div class="col-md-4">
+      <div class="qty">${item.qty}</div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="cart__item-title">${item.name}</h3>
+    </div>
+  </div>
+
+    `;
+        });
+        totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
+      };
+
+      const addtocart = (productindex) => {
+        const product = products[productindex];
+
+        let existingProduct = false;
+        let newcartitems = cart.item.reduce((state, item) => {
+          if (item.name === product.name) {
+            existingProduct = true;
+
+            const newitem = {
+              ...item,
+              qty: item.qty + 1,
+              total: (item.qty + 1) * item.price,
+            };
+            return [...state, newitem];
+          }
+          return [...state, item];
+        }, []);
+        if (!existingProduct) {
+          newcartitems.push({
+            ...product,
+            qty: 1,
+            total: product.price,
+          });
+        }
+        cart = {
+          ...cart,
+          item: newcartitems,
+        };
+        localStorage.setItem("cartbox", JSON.stringify(cart));
+        randercartitem();
+      };
+
+      const loadCart = () => {
+        const savedCart = localStorage.getItem("cartbox");
+        if (savedCart) {
+          cart = JSON.parse(savedCart);
+        } else {
+          cart = { item: [] }; // مقدار پیش‌فرض اگر سبد خرید خالی باشد
+        }
+
+        // رندر کردن آیتم‌های سبد خرید
+        randercartitem();
+      };
+
+      // فراخوانی تابع loadCart هنگام بارگذاری صفحه
+      window.onload = loadCart;
+
+      // TABEE EZAFE KARDAN MAHSOL BE SABAD XARID...
+
+      const removelocal = () => {
+        localStorage.removeItem("cartbox");
+      };
+
+      const removefromcart = (productname) => {
+        const newcartitems = cart.item.reduce((state, item) => {
+          if (item.name === productname) {
+            const newitem = {
+              ...item,
+              qty: item.qty - 1,
+              total: (item.qty - 1) * item.price,
+            };
+            if (newitem.qty > 0) {
+              return [...state, newitem];
+            } else {
+              return state;
+            }
+          }
+          return [...state, item];
+        }, []);
+        cart = {
+          ...cart,
+          item: newcartitems,
+        };
+        randercartitem();
+      };
+
+      // TABEE HAZF MAHSOL AZ SABAD XARID
+      randerproduct();
+      randerproductSamsung();
+      randerproductxiaomi();
+      randerproductnokia();
+      randercartitem();
+    </script>
+  </body>
+</html>

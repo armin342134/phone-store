@@ -1,0 +1,425 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فروش اقساطی موبایل صالحی</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/718fedc490.js" crossorigin="anonymous"></script>
+    <style>
+      
+      .post-container{
+        display: flex;
+        flex-direction: column;
+        height: 1000px;
+        background-color: white;
+        border: solid 1px black;
+        margin-top: 10px;
+        overflow: hidden;
+      }
+      .post-header{
+        margin: 30px;
+        overflow: hidden;
+
+      }
+      .parent{
+        border-left: solid 1px   black;
+        border-right: solid 1px   black;
+        margin: 30px;
+        padding: 20px;
+        height: 70%;
+        overflow: visible;
+
+      }
+      .section{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        height: 100%;
+
+      }
+      .section-right{
+        border: solid 1px black;
+        width: 49%;
+        box-shadow:  inset 1px 1px 5px black;
+      }
+      .section-right div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px;
+
+      }
+      .section-right button{
+        width: 173px;
+        height: 40px;
+        color: white;
+        background-color: rgb(174, 103, 240);
+      }
+      .section-right button:hover{
+        background-color: blueviolet;
+      }
+      .section-right h3{
+        margin: 10px;
+        text-align: center;
+      }
+      .section-left{
+        border: solid 1px black;
+        width: 49%;
+        box-shadow:  inset 1px 1px 5px black;
+       
+      }
+      .section-left h3{
+        margin: 10px;
+        text-align: center;
+      }
+      .section-left  .display{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .natayej{
+
+        border: solid 1px black;
+      }
+      .natayej div{
+        display: flex;
+        flex-direction: column;
+      }
+      .kol-ca{
+        color: green;
+      }
+      .sefaresh-ca{
+        color: red;
+      }
+      .karmozd-ca{
+        color: blue;
+      }
+      .payments-table{
+        display: flex;
+        flex-direction: column;
+      }
+      .payments-table thead tr{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .payments-table tbody tr{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
+        text-align: center;
+        font-weight: normal;
+      }
+      .payments-table tbody tr:nth-child(2n){
+        background-color: #f2f2f2;
+      }
+    </style>
+
+  </head>
+  <body>
+    <header class="header" id="header">
+        <div class="container-header">
+          <div class="item-right">
+            <i class="fa-brands fa-apple"></i>
+            <h2>موبایل صالحی</h2>
+  
+          </div>
+  
+          <div class="item-center">
+            <form action="">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input class="search" type="text" placeholder="جستوجوی محصولات ..." >
+              <select class="select">
+                <option value="">همه دسته ها</option>
+                <option value="">همه گوشی ها</option>
+                <option value="">اپل</option>
+                <option value="">سامسونگ</option>
+                <option value="">شیایومی</option>
+                <option value="">نوکیا</option>
+                <option value="">تی سی ال</option>
+                <option value="">داریا</option>
+  
+              </select>
+            </form>
+  
+          </div>
+  
+                <div class="item-left">
+                <div class="login">
+                   <button class="login-btn">ورود به حساب کاربری</button>
+                  </div>
+                  <div class="cart">
+                    <a href="cart/cart.html">
+                      <i class="fa-solid fa-cart-shopping"></i>
+  
+                    </a>
+                  </div>
+  
+                </header>
+                <div class="menu">
+                <nav class="nav-menu">
+                  <ul>
+                    <li><a href="">فروشگاه</a>
+                      <ul>
+                        <li><a href="pages/IPHONE/iphone-products.html"  >آیفون</a></li>
+                        <li><a href="#samsung">سامسونگ</a></li>
+                        <li><a href="#xiaomi">شیایومی</a></li>
+                        <li><a href="#nokia">نوکیا</a></li>
+                        <li><a href="">هدفون بلوتوثی</a></li>
+                        <li><a href="">ساعت هوشمند</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="gesti.html">فروش اقساطی</a></li>
+                    <li><a href="login-page/login-account.html">حساب کاربری</a></li>
+                    <li><a href="cart/cart.html">سبد خرید</a></li>
+                    <li><a href="contact us/contact.html">تماس با ما</a></li>
+                  </ul>
+                </nav>
+                </div>
+  
+    <div class="container">
+        <div class="rowA">
+            <div class="post-container">
+              <div class="post-header">
+                <h2>فروش اقساطی موبایل صالحی</h2>
+                <hr>
+              </div>
+
+              <div class="parent">
+              <div class="title">محاسبه اقساط</div>
+              <hr>
+              <div  class="conditions">
+                <h4>شرایط و قوانین خرید اقساطی</h4>
+                <ul>
+                  <li>  ۱. کارمزد فروش اقساطی ۴ درصد است.</li>
+                  <li>۲. در صورتی که مبلغ پیش پرداخت کمتر از ۵۰ درصد کل خرید باشد یا مدت زمان بازپرداخت بیشتر از ۶ ماه باشد، مقدار کارمزد برابر ۵ درصد خواهد بود.</li>
+                  <li>۳. حداکثر مدت زمان بازپرداخت خرید اقساطی ۱۲ ماه است</li>
+                </ul>
+              
+
+              </div>
+              <div class="section">
+                <div class="section-right">
+                  <h3>جزییات خرید اقساطی</h3>
+                  <form action="" class="form">
+                    <div>
+                      <label for="">مبلغ کل سفارش (تومان)</label>
+                      <input type="text" class="total-amount" id="" oninput="formatinput(this)">
+                    </div>
+                    <div>
+                      <label for="" >مبلغ پیش پرداخت (تومان)</label>
+                      <input type="text" class="prepaid-amount" oninput="formatinput(this)">
+                    </div>
+                    <div>
+                      <label for="">تعداد اقساط</label>
+                      <input type="number" min="1" max="12" class="number-of-installments">
+                    </div>
+                    <div>
+                      <label for="">هر چند ماه</label>
+                      <input type="number" min="1" max="12" class="every-few-months">
+                    </div>
+                    <div>
+                      <label for=""></label>
+                      <button class="Computing">محاسبه</button>
+                    </div>
+                  </form>
+                  <div class="natayej">
+                    <div class="sefaresh-ca">
+                      <h4>مبلغ سفارش
+                        (تومان)</h4>
+                      <div class="sefaresh">0</div>
+                    </div>
+                    <div class="karmozd-ca">
+                      <h4>کارمزد کل
+                        (تومان)</h4>
+                      <div class="karmozd">0</div>
+                    </div>
+                    <div class="kol-ca">
+                      <h4>مبلغ پرداخت نهایی
+                         (تومان)</h4>
+                      <div class="kol">0</div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="section-left">
+                  <h3>  جدول پرداخت قسط ها</h3>
+                <table class="payments-table">
+                  <thead>
+                    <tr>
+                      <th>قسط</th>
+                      <th>مبلغ</th>
+                      <th>کارمزد</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tbody">
+              
+
+                  </tbody>
+                </table>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="footer">
+          <div class="logo-btn">
+            <div class="logo">
+              <i class="fa-brands fa-apple"></i>
+              <h1>موبایل صالحی</h1>
+            </div>
+            <div class="btn-up">
+              <div>
+                <a href="#header" >بازگشت به بالای صفحه</a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="phone">
+            <ul>
+              <li>هفت روز هفته ، ۲۴ ساعت شبانه‌روز پاسخگوی شما هستیم.</li>
+              <li>شماره تلفن: <a href="">09910450537</a></li>
+              <li>اینستاگرام: <a href="">Mobile.salehi_</a></li>
+            </ul>
+        
+          </div>
+        
+          <div class="footer-services">
+            <div class="services">
+              <div>
+                <a href="">
+                  <img src="../images/iconfinder_ic_dhl_delivery_5761436.png" alt="">
+                  <span>تحویل اکسپرس</span>
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="../images/iconfinder_247_24-7_phone_service_support_call_4014702.png" alt="">
+                  <span>پشتیبانی ۲۴ ساعته</span>
+                </a>
+              </div>
+              <div>  <a href="">
+                  <img src="../images/iconfinder_currency_dollar_currency_money_4229510.png" alt="">
+                  <span>پرداخت آنلاین</span>
+                </a></div>
+              <div>  <a href="">
+                  <img src="../images/iconfinder_ic_round_return_5760423.png" alt="">
+                  <span>۷ روز ضمانت بازگشت</span>
+                </a></div>
+              <div>  <a href="">
+                  <img src="../images/iconfinder_verified-check-secured-legal-certified_3209199.png" alt="">
+                  <span>ضمانت اصل بودن</span>
+                </a></div>
+            </div>
+            <div class="etemad">
+        <div>
+          <img src="../images/enamad_icon_text_color_blue_275.png" alt="">
+        </div>
+            </div>
+          </div>
+          <div class="copy-right">
+            <div>
+            <p>
+              استفاده از مطالب فروشگاه اینترنتی موبایل صالحی فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق موبایل صالحی می‌باشد. Copyright © 2022 - 2024
+              </p>
+            </div>
+        
+          </div>
+        </div>    
+    <script>
+      
+      let form =document.querySelector(".form")
+      let btn =document.querySelector(".Computing");
+      
+      function formatinput(input){
+        var clean = input.value.replace(/[^0-9]/g, '');
+        var formatvalue = clean.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+        input.value = formatvalue
+      }
+      // -------------------------------------------------------------------------------------------
+      
+      btn.addEventListener("click", (e)=>{
+        e.preventDefault()
+        let totalAmount =document.querySelector(".total-amount").value;
+        let prepaidAmount =document.querySelector(".prepaid-amount").value;
+        let installments =document.querySelector(".number-of-installments");
+        let month = document.querySelector(".every-few-months");
+        let karmozddiv =document.querySelector(".karmozd");
+        let sefaresh =document.querySelector(".sefaresh");
+        let kol = document.querySelector(".kol")
+        let tbody =document.querySelector(".tbody");
+          
+          totalAmount=parseInt(totalAmount.replace(/,/g, ''));
+          prepaidAmount=parseInt(prepaidAmount.replace(/,/g, ''));
+          installments =parseInt(installments.value);
+          month =parseInt(month.value);
+          
+          function formatnumber(num){
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',')
+          }
+          
+          
+          let num =totalAmount-prepaidAmount;
+          let sum = num/installments;
+
+          console.log(num)
+          
+          let karmozd = installments*0.05*month*num;
+          let result=Math.round(karmozd)
+          result=formatnumber(result)
+          karmozddiv.innerHTML=result;
+          let koli = num+karmozd
+          let karmozdmonth = karmozd/installments
+          let karmozdmonthUp=Math.round(karmozdmonth)
+          karmozdmonth=formatnumber(karmozdmonthUp)
+          let amount =koli/installments
+          let amountUp=Math.round(amount)
+          amountUp=formatnumber(amountUp)
+
+          // ---------------------------------------------------------------------
+          totalAmount=formatnumber(totalAmount)
+          sefaresh.innerHTML=totalAmount;
+          
+          // -----------------------------------------------------------------------------
+          koli=formatnumber(koli)
+          kol.innerHTML=koli;
+        
+
+              
+              // -----------------------------------------------------------------------------------
+
+              while (tbody.rows.length > 0) {
+            tbody.deleteRow(0);
+        }
+
+        // ایجاد سطرهای جدید بر اساس تعداد اقساط
+        
+        for (let i = 1; i <= installments; i++) {
+            const row = tbody.insertRow();
+            row.insertCell(0).innerText = i;
+            row.insertCell(1).innerText = `${amountUp}`;
+            row.insertCell(2).innerText = `${karmozdmonth}`;
+        }
+      
+ 
+
+
+
+            });
+            
+        
+
+              
+
+            
+        
+        </script>
+  </body>
+  </html>
+  
