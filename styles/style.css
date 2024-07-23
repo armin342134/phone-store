@@ -9,6 +9,12 @@
   font-family: "Vazir-FD";
   src: url("../fonts/Vazir-Medium-FD.woff");
 }
+a {
+  color: #095496;
+}
+a:hover {
+  color: #1a3f60;
+}
 
 body {
   background: blueviolet;
@@ -33,12 +39,28 @@ body {
   align-items: center;
   padding: 10px;
 }
+.item-right a {
+  list-style-type: none;
+  color: yellow;
+}
 .item-right i {
   margin: 10px;
   font-size: 30px;
 }
 
-.item-center {
+/* .item-center { */
+/* display: flex;
+  flex-direction: column;
+  align-items: center; */
+/* } */
+.item-center i {
+  font-size: 20px;
+}
+.item-center .search {
+  border: none;
+  outline: none;
+}
+.search-form {
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -48,13 +70,7 @@ body {
   margin: 15px;
   padding: 5px;
 }
-.item-center i {
-  font-size: 20px;
-}
-.item-center .search {
-  border: none;
-  outline: none;
-}
+
 .item-center .select {
   background-color: white;
   border: none;

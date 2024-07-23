@@ -12,28 +12,18 @@
     <header class="header" id="header">
         <div class="container-header">
           <div class="item-right">
-            <i class="fa-brands fa-apple"></i>
+            <a href="../../index.html"><i class="fa-brands fa-apple"></i></a>
             <h2>موبایل صالحی</h2>
   
           </div>
   
           <div class="item-center">
+            <div class="search-form">
             <form action="">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input class="search" type="text" placeholder="جستوجوی محصولات ..." >
-              <select class="select">
-                <option value="">همه دسته ها</option>
-                <option value="">همه گوشی ها</option>
-                <option value="">اپل</option>
-                <option value="">سامسونگ</option>
-                <option value="">شیایومی</option>
-                <option value="">نوکیا</option>
-                <option value="">تی سی ال</option>
-                <option value="">داریا</option>
-  
-              </select>
+              <input class="search-input" id="search-input" type="search" placeholder="جستوجوی محصولات ..."  autocomplete="off" oninput="searchProducts ()" >
             </form>
-  
+            </div>
           </div>
   
                 <div class="item-left">
@@ -74,6 +64,17 @@
                       <div class="col-md-12">
                         <div class="products">
                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="containersam">
+                    <div class="row" id="samsung">
+                      <div><i class="fas fa-shopping-bag"></i> <h2>محصولات سامسونگ</h2></div>
+                      <div class="col-md-12">
+                        <div class="products-samsung">
+                      
                           </div>
                         </div>
                       </div>
@@ -133,10 +134,13 @@
           image: "../../images/iphone/15.webp",
         },
       ];
-      const randerproduct = () => {
+      const randerproduct = (filteredProducts) => {
         const productdiv = document.querySelector(".products");
-        productdiv.innerHTML = " ";
-        products.forEach((item, index) => {
+        const productdivSam = document.querySelector(".products-samsung");
+         productdivSam.innerHTML = " ";
+         productdiv.innerHTML = " ";
+        filteredProducts.forEach((item, index) => {
+          if(products[i].name==="iphone"){
           productdiv.innerHTML += ` 
      <div class="product" >
     <div class="product__image">
@@ -146,12 +150,45 @@
     <h3 class="product__price">${item.price} تومان</h3>
     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
   </div>
+
+  
+  `}
+  else if(products[i].name==="samsung"){
+    productdiv.innerHTML += ` <div class="product" id="iphone">
+    <div class="product__image">
+      <img src=${item.image} alt="" />
+    </div>
+    <a class="product__title" href="${item.page}">${item.name}</a>
+    <h3 class="product__price">${item.price} تومان</h3>
+    <button class="add-to-cart" onclick="addtocartSamsung(${index})">افزودن به سبد خرید</button>
+  </div>
   `;
+    
+
+    
+
+  }
+
         });
       };
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+// search function
+
+const searchProducts = () => {
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(query)
+  );
+  randerproduct(filteredProducts);
+};
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
+
       const randercartitem = () => {
         let cartdiv = document.querySelector(".cart__items");
-        cartdiv.innerHTML = " ";
+        cartdiv.innerHTML = "";
         const totalpriceEl = document.querySelector(".cart__total-price");
         let totalprice = 0;
         if (cart.item.length === 0) {
@@ -206,7 +243,6 @@
           item: newcartitems,
         };
         localStorage.setItem("cartbox", JSON.stringify(cart));
-        randercartitem();
       };
 
       const loadCart = () => {
@@ -218,7 +254,6 @@
         }
 
         // رندر کردن آیتم‌های سبد خرید
-        randercartitem();
       };
 
       // فراخوانی تابع loadCart هنگام بارگذاری صفحه
@@ -254,11 +289,8 @@
       };
 
       // TABEE HAZF MAHSOL AZ SABAD XARID
-      randerproduct();
-      randerproductSamsung();
-      randerproductxiaomi();
-      randerproductnokia();
-      randercartitem();
+      randerproduct(products);
+
     </script>
   </body>
 </html>
