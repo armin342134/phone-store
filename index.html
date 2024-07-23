@@ -17,14 +17,14 @@
         </div>
 
         <div class="item-center">
+          <div class="search-form">
           <form action="">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input class="search" type="text" placeholder="جستوجوی محصولات ..." >
-            <button class="search-btn">جستو جو</button>
+            <input class="search-input" id="search-input" type="search" placeholder="جستوجوی محصولات ..."  autocomplete="off" oninput="searchProducts()" >
           </form>
-          
         </div>
-        <div class="display-search" style="width: 100px; height: 100px;"></div>
+  
+        </div>
 
               <div class="item-left">
               <div class="login">
@@ -73,7 +73,7 @@
       <div class="row" id="iphone">
         <div><i class="fas fa-shopping-bag"></i> <h2>محصولات آیفون</h2></div>
         <div class="col-md-12">
-          <div class="products">
+          <div class="products" id="products">
             
             </div>
           </div>

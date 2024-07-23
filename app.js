@@ -51,7 +51,6 @@ const products = [
     image: "images/iphone/15.webp",
   },
 ];
-
 const productsSamsung = [
   {
     id: 1,
@@ -218,10 +217,10 @@ let cart = {
   total: 0,
 };
 
-const randerproduct = () => {
+const randerproduct = (filteredProducts) => {
   const productdiv = document.querySelector(".products");
   productdiv.innerHTML = " ";
-  products.forEach((item, index) => {
+  filteredProducts.forEach((item, index) => {
     productdiv.innerHTML += ` 
      <div class="product" >
     <div class="product__image">
@@ -234,6 +233,20 @@ const randerproduct = () => {
   `;
   });
 };
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+// search function
+
+const searchProducts = () => {
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const filteredProducts = products.filter((product) =>
+    product.name.toLocaleLowerCase().includes(query)
+  );
+  randerproduct(filteredProducts);
+};
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 const randerproductSamsung = () => {
   const productdiv = document.querySelector(".products-samsung");
@@ -484,7 +497,7 @@ const removefromcart = (productname) => {
 };
 
 // TABEE HAZF MAHSOL AZ SABAD XARID
-randerproduct();
+randerproduct(products);
 randerproductSamsung();
 randerproductxiaomi();
 randerproductnokia();
@@ -537,9 +550,3 @@ loginBtn.addEventListener("click", () => {
 });
 
 // CODE DOKME VOROD BE HESAB KARBARI
-
-let searchInput = document.querySelector(".search");
-let searchBtn = document.querySelector(".search-btn");
-let displaysearch = document.querySelector(".display-search");
-
-let findsearch = null;
