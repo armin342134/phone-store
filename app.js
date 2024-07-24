@@ -53,59 +53,6 @@ const products = [
 
   {
     id: 1,
-    name: "Nokia 106",
-    price: 50000,
-    image: "images/samsung/Galaxy-A05-۲.jpg",
-    page: "pages/IPHONE/pageip13.html",
-  },
-  {
-    id: 2,
-    name: "Samsung A05s",
-    price: 75000,
-    image: "images/samsung/05S.webp",
-    page: "pages/IPHONE/page-13pro.html",
-  },
-  {
-    id: 3,
-    name: "Samsung A15",
-    price: 85000,
-    image: "images/samsung/a15.webp",
-    page: "pages/IPHONE/page-13promax.html",
-  },
-  {
-    id: 4,
-    name: "Samsung A25",
-    price: 120000,
-    image: "images/samsung/a25.webp",
-  },
-  {
-    id: 5,
-    name: "Samsung A35",
-    price: 150000,
-    image: "images/samsung/35.webp",
-  },
-  {
-    id: 6,
-    name: "Samsung A55",
-    price: 200000,
-    image: "images/samsung/a55.webp",
-  },
-  {
-    id: 7,
-    name: "Samsung S23 FE",
-    price: 280000,
-    image: "images/samsung/S23FE.webp",
-  },
-  {
-    id: 8,
-    name: "Samsung S24 ULTRA",
-    price: 750000,
-    image: "images/samsung/S24ULRTAGOLD.webp",
-  },
-];
-const productsSamsung = [
-  {
-    id: 1,
     name: "Samsung A05",
     price: 50000,
     image: "images/samsung/Galaxy-A05-۲.jpg",
@@ -155,8 +102,6 @@ const productsSamsung = [
     price: 750000,
     image: "images/samsung/S24ULRTAGOLD.webp",
   },
-];
-const productsxiaomi = [
   {
     id: 1,
     name: "Xiaomi Note 13Pro",
@@ -208,9 +153,6 @@ const productsxiaomi = [
     price: 750000,
     image: "images/samsung/S24ULRTAGOLD.webp",
   },
-];
-
-const productsnokia = [
   {
     id: 1,
     name: "Nokia 106",
@@ -263,8 +205,10 @@ const productsnokia = [
     image: "images/samsung/S24ULRTAGOLD.webp",
   },
 ];
+const productsSamsung = [];
+const productsxiaomi = [];
 
-console.log(productsnokia[1].name);
+const productsnokia = [];
 
 let cart = {
   item: [],

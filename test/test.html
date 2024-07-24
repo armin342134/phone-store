@@ -1,11 +1,73 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/style.css">
-</head>
-<body>
-    <script src="../app.js"></script>
-</body>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <script>
+      const products = [
+        {
+          iphone: [
+            {
+              id: 1,
+              name: "iPhone 13",
+              price: 500000,
+              image: "../../images/iphone/iphone-13-Apple-3-.jpg",
+              page: "pageip13.html",
+            },
+            {
+              id: 2,
+              name: "iPhone13Pro",
+              price: 750000,
+              image: "../../images/iphone/iphone-13-Pro-Apple-.jpg",
+              page: "page-13pro.html",
+            },
+            {
+              id: 3,
+              name: "iPhone13ProMax",
+              price: 850000,
+              image: "../../images/iphone/iphone-13-Pro-Max-Apple-3-.jpg",
+              page: "page-13promax.html",
+            },
+            {
+              id: 4,
+              name: "iPhone14",
+              price: 750000,
+              image: "../../images/iphone/14BB.webp",
+            },
+            {
+              id: 5,
+              name: "iPhone14Pro",
+              price: 750000,
+              image: "../../images/iphone/14PRO.webp",
+            },
+            {
+              id: 6,
+              name: "iPhone14ProMax",
+              price: 750000,
+              image: "../../images/iphone/14PROMAX.webp",
+            },
+            {
+              id: 7,
+              name: "iPhone15",
+              price: 480000,
+              image: "../../images/iphone/15B.webp",
+            },
+            {
+              id: 8,
+              name: "iPhone15ProMax",
+              price: 750000,
+              image: "../../images/iphone/15.webp",
+            },
+          ],
+
+          samsung: [],
+        },
+      ];
+
+      console.log(products[0].iphone[1].name);
+    </script>
+  </body>
 </html>

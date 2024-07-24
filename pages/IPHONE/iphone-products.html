@@ -18,12 +18,7 @@
           </div>
   
           <div class="item-center">
-            <div class="search-form">
-            <form action="">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input class="search-input" id="search-input" type="search" placeholder="جستوجوی محصولات ..."  autocomplete="off" oninput="searchProducts ()" >
-            </form>
-            </div>
+           
           </div>
   
                 <div class="item-left">
@@ -41,10 +36,10 @@
                 <div class="menu">
                 <nav class="nav-menu">
                   <ul>
-                    <li><a href="">فروشگاه</a>
+                    <li><a href="../../index.html">فروشگاه</a>
                       <ul>
-                        <li><a href="#iphone">آیفون</a></li>
-                        <li><a href="#samsung">سامسونگ</a></li>
+                        <li><a href="../IPHONE/iphone-products.html">آیفون</a></li>
+                        <li><a href="../SAMSUNG/samsung-products.html">سامسونگ</a></li>
                         <li><a href="#xiaomi">شیایومی</a></li>
                         <li><a href="#nokia">نوکیا</a></li>
                         <li><a href="">هدفون بلوتوثی</a></li>
@@ -58,6 +53,12 @@
                   </ul>
                 </nav>
                 </div>
+                <div class="search-div">
+                <div class="search-form">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input class="search-input" id="search-input" type="search" placeholder="جستوجوی محصولات ..."  autocomplete="off" oninput="searchProducts ()" >
+                </div>
+                </div>
                 <div class="container">
                     <div class="row" id="iphone">
                       <div><i class="fas fa-shopping-bag"></i> <h2>محصولات آیفون</h2></div>
@@ -69,20 +70,73 @@
                       </div>
                     </div>
                   </div>
-                  <div class="containersam">
-                    <div class="row" id="samsung">
-                      <div><i class="fas fa-shopping-bag"></i> <h2>محصولات سامسونگ</h2></div>
-                      <div class="col-md-12">
-                        <div class="products-samsung">
-                      
-                          </div>
+                  <div class="footer">
+                    <div class="logo-btn">
+                      <div class="logo">
+                        <i class="fa-brands fa-apple"></i>
+                        <h1>موبایل صالحی</h1>
+                      </div>
+                      <div class="btn-up">
+                        <div>
+                          <a href="#header" >بازگشت به بالای صفحه</a>
                         </div>
                       </div>
                     </div>
+                  
+                    <div class="phone">
+                      <ul>
+                        <li>هفت روز هفته ، ۲۴ ساعت شبانه‌روز پاسخگوی شما هستیم.</li>
+                        <li>شماره تلفن: <a href="">09910450537</a></li>
+                        <li>اینستاگرام: <a href="">Mobile.salehi_</a></li>
+                      </ul>
+                  
+                    </div>
+                  
+                    <div class="footer-services">
+                      <div class="services">
+                        <div>
+                          <a href="">
+                            <img src="../../images/iconfinder_ic_dhl_delivery_5761436.png" alt="">
+                            <span>تحویل اکسپرس</span>
+                          </a>
+                        </div>
+                        <div>
+                          <a href="">
+                            <img src="../../images/iconfinder_247_24-7_phone_service_support_call_4014702.png" alt="">
+                            <span>پشتیبانی ۲۴ ساعته</span>
+                          </a>
+                        </div>
+                        <div>  <a href="">
+                            <img src="../../images/iconfinder_currency_dollar_currency_money_4229510.png" alt="">
+                            <span>پرداخت آنلاین</span>
+                          </a></div>
+                        <div>  <a href="">
+                            <img src="../../images/iconfinder_ic_round_return_5760423.png" alt="">
+                            <span>۷ روز ضمانت بازگشت</span>
+                          </a></div>
+                        <div>  <a href="">
+                            <img src="../../images/iconfinder_verified-check-secured-legal-certified_3209199.png" alt="">
+                            <span>ضمانت اصل بودن</span>
+                          </a></div>
+                      </div>
+                      <div class="etemad">
+                  <div>
+                    <img src="../../images/enamad_icon_text_color_blue_275.png" alt="">
                   </div>
+                      </div>
+                    </div>
+                    <div class="copy-right">
+                      <div>
+                      <p>
+                        استفاده از مطالب فروشگاه اینترنتی موبایل صالحی فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق موبایل صالحی می‌باشد. Copyright © 2022 - 2024
+                        </p>
+                      </div>
+                  
+                    </div>
+                  </div>    
     <script>
-      const products = [
-        {
+      const products =[ 
+          {
           id: 1,
           name: "iPhone 13",
           price: 500000,
@@ -132,15 +186,14 @@
           name: "iPhone15ProMax",
           price: 750000,
           image: "../../images/iphone/15.webp",
-        },
-      ];
+        }
+        ] ;
+
+
       const randerproduct = (filteredProducts) => {
         const productdiv = document.querySelector(".products");
-        const productdivSam = document.querySelector(".products-samsung");
-         productdivSam.innerHTML = " ";
          productdiv.innerHTML = " ";
         filteredProducts.forEach((item, index) => {
-          if(products[i].name==="iphone"){
           productdiv.innerHTML += ` 
      <div class="product" >
     <div class="product__image">
@@ -150,27 +203,9 @@
     <h3 class="product__price">${item.price} تومان</h3>
     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
   </div>
-
-  
-  `}
-  else if(products[i].name==="samsung"){
-    productdiv.innerHTML += ` <div class="product" id="iphone">
-    <div class="product__image">
-      <img src=${item.image} alt="" />
-    </div>
-    <a class="product__title" href="${item.page}">${item.name}</a>
-    <h3 class="product__price">${item.price} تومان</h3>
-    <button class="add-to-cart" onclick="addtocartSamsung(${index})">افزودن به سبد خرید</button>
-  </div>
   `;
-    
+        });}
 
-    
-
-  }
-
-        });
-      };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -290,6 +325,7 @@ const searchProducts = () => {
 
       // TABEE HAZF MAHSOL AZ SABAD XARID
       randerproduct(products);
+      randerproductsam(products)
 
     </script>
   </body>
