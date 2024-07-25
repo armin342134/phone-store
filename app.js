@@ -205,10 +205,7 @@ const products = [
     image: "images/samsung/S24ULRTAGOLD.webp",
   },
 ];
-const productsSamsung = [];
-const productsxiaomi = [];
 
-const productsnokia = [];
 
 let cart = {
   item: [],
@@ -240,60 +237,12 @@ const searchProducts = () => {
   const query = document.getElementById("search-input").value.toLowerCase();
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(query)
-  );
-  randerproduct(filteredProducts);
+);
+randerproduct(filteredProducts);
 };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-const randerproductSamsung = () => {
-  const productdiv = document.querySelector(".products-samsung");
-  productdiv.innerHTML = " ";
-  productsSamsung.forEach((item, index) => {
-    productdiv.innerHTML += ` <div class="product" id="iphone">
-    <div class="product__image">
-      <img src=${item.image} alt="" />
-    </div>
-    <a class="product__title" href="${item.page}">${item.name}</a>
-    <h3 class="product__price">${item.price} تومان</h3>
-    <button class="add-to-cart" onclick="addtocartSamsung(${index})">افزودن به سبد خرید</button>
-  </div>
-  `;
-  });
-};
-
-const randerproductxiaomi = () => {
-  const productdiv = document.querySelector(".products-xiaomi");
-  productdiv.innerHTML = " ";
-  productsxiaomi.forEach((item, index) => {
-    productdiv.innerHTML += ` 
-     <div class="product" >
-    <div class="product__image">
-      <img src=${item.image} alt="" />
-    </div>
-    <a class="product__title" href="${item.page}">${item.name}</a>
-    <h3 class="product__price">${item.price} تومان</h3>
-    <button class="add-to-cart" onclick="addtocartxiaomi(${index})">افزودن به سبد خرید</button>
-  </div>
-  `;
-  });
-};
-const randerproductnokia = () => {
-  const productdiv = document.querySelector(".products-nokia");
-  productdiv.innerHTML = " ";
-  productsnokia.forEach((item, index) => {
-    productdiv.innerHTML += ` 
-     <div class="product" >
-    <div class="product__image">
-      <img src=${item.image} alt="" />
-    </div>
-    <a class="product__title" href="${item.page}">${item.name}</a>
-    <h3 class="product__price">${item.price} تومان</h3>
-    <button class="add-to-cart" onclick="addtocartnokia(${index})">افزودن به سبد خرید</button>
-  </div>
-  `;
-  });
-};
 
 const randercartitem = () => {
   let cartdiv = document.querySelector(".cart__items");
@@ -323,103 +272,11 @@ const randercartitem = () => {
   totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
 };
 
+
+// TABEE EZAFE KARDAN MAHSOL BE SABAD XARID...
+
 const addtocart = (productindex) => {
   const product = products[productindex];
-
-  let existingProduct = false;
-  let newcartitems = cart.item.reduce((state, item) => {
-    if (item.name === product.name) {
-      existingProduct = true;
-
-      const newitem = {
-        ...item,
-        qty: item.qty + 1,
-        total: (item.qty + 1) * item.price,
-      };
-      return [...state, newitem];
-    }
-    return [...state, item];
-  }, []);
-  if (!existingProduct) {
-    newcartitems.push({
-      ...product,
-      qty: 1,
-      total: product.price,
-    });
-  }
-  cart = {
-    ...cart,
-    item: newcartitems,
-  };
-  localStorage.setItem("cartbox", JSON.stringify(cart));
-  randercartitem();
-};
-
-const addtocartSamsung = (productindex) => {
-  const product = productsSamsung[productindex];
-
-  let existingProduct = false;
-  let newcartitems = cart.item.reduce((state, item) => {
-    if (item.name === product.name) {
-      existingProduct = true;
-
-      const newitem = {
-        ...item,
-        qty: item.qty + 1,
-        total: (item.qty + 1) * item.price,
-      };
-      return [...state, newitem];
-    }
-    return [...state, item];
-  }, []);
-  if (!existingProduct) {
-    newcartitems.push({
-      ...product,
-      qty: 1,
-      total: product.price,
-    });
-  }
-  cart = {
-    ...cart,
-    item: newcartitems,
-  };
-  localStorage.setItem("cartbox", JSON.stringify(cart));
-  randercartitem();
-};
-
-const addtocartxiaomi = (productindex) => {
-  const product = productsxiaomi[productindex];
-
-  let existingProduct = false;
-  let newcartitems = cart.item.reduce((state, item) => {
-    if (item.name === product.name) {
-      existingProduct = true;
-
-      const newitem = {
-        ...item,
-        qty: item.qty + 1,
-        total: (item.qty + 1) * item.price,
-      };
-      return [...state, newitem];
-    }
-    return [...state, item];
-  }, []);
-  if (!existingProduct) {
-    newcartitems.push({
-      ...product,
-      qty: 1,
-      total: product.price,
-    });
-  }
-  cart = {
-    ...cart,
-    item: newcartitems,
-  };
-  localStorage.setItem("cartbox", JSON.stringify(cart));
-  randercartitem();
-};
-const addtocartnokia = (productindex) => {
-  const product = productsnokia[productindex];
 
   let existingProduct = false;
   let newcartitems = cart.item.reduce((state, item) => {
@@ -465,11 +322,12 @@ const loadCart = () => {
 // فراخوانی تابع loadCart هنگام بارگذاری صفحه
 window.onload = loadCart;
 
-// TABEE EZAFE KARDAN MAHSOL BE SABAD XARID...
 
 const removelocal = () => {
   localStorage.removeItem("cartbox");
 };
+
+// TABEE HAZF MAHSOL AZ SABAD XARID
 
 const removefromcart = (productname) => {
   const newcartitems = cart.item.reduce((state, item) => {
@@ -494,12 +352,7 @@ const removefromcart = (productname) => {
   randercartitem();
 };
 
-// TABEE HAZF MAHSOL AZ SABAD XARID
 randerproduct(products);
-randerproductSamsung();
-randerproductxiaomi();
-randerproductnokia();
-randercartitem();
 
 // TA IN GESMAT SAKHT SABAD XARID VE EZAFE KARDAN MAHSOL...
 
@@ -519,7 +372,6 @@ const img = [
     image: "images/iphone-14.jpg",
   },
 ];
-
 function displayObject(index) {
   baner.innerHTML = `<a href=""><img class="baner-img" src="${img[index].image}" alt=""></a>
   `;
@@ -539,6 +391,17 @@ next.addEventListener("click", (event) => {
     displayObject(currentIndex);
   }
 });
+
+
+// timer ax haye baner
+
+let currentIndexImg = 0;
+const imageElement = document.getElementById("baner-img");
+function changeimage() {
+  currentIndexImg = (currentIndexImg + 1) % img.length;
+  imageElement.src = img[currentIndexImg].image;
+}
+setInterval(changeimage, 3000);
 
 // VE IN GESMAT TA INJA SAKHT BANER PAYIN MENU
 
