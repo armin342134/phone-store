@@ -106,106 +106,106 @@ const products = [
     id: 1,
     name: "Xiaomi Note 13Pro",
     price: 50000,
-    image: "images/samsung/Galaxy-A05-۲.jpg",
+    image: "images/xiaomi/note13problack.webp",
     page: "pages/IPHONE/pageip13.html",
   },
   {
     id: 2,
-    name: "Samsung A05s",
+    name: "Xiaomi Note13",
     price: 75000,
-    image: "images/samsung/05S.webp",
+    image: "images/xiaomi/note13blue.webp",
     page: "pages/IPHONE/page-13pro.html",
   },
   {
     id: 3,
-    name: "Samsung A15",
+    name: "Xiaomi Poco C65",
     price: 85000,
-    image: "images/samsung/a15.webp",
+    image: "images/xiaomi/pococ65black.webp",
     page: "pages/IPHONE/page-13promax.html",
   },
   {
     id: 4,
-    name: "Samsung A25",
+    name: "Xiaomi Poco x6",
     price: 120000,
-    image: "images/samsung/a25.webp",
+    image: "images/xiaomi/pocox6blue.webp",
   },
   {
     id: 5,
-    name: "Samsung A35",
+    name: "Redmi 12",
     price: 150000,
-    image: "images/samsung/35.webp",
+    image: "images/xiaomi/redmin12white.jpg",
   },
+
   {
     id: 6,
-    name: "Samsung A55",
+    name: "Redmin Pad Se",
     price: 200000,
-    image: "images/samsung/a55.webp",
+    image: "images/xiaomi/redminpad1.jpg",
   },
   {
     id: 7,
-    name: "Samsung S23 FE",
+    name: "Xiaomi Note 12s",
     price: 280000,
-    image: "images/samsung/S23FE.webp",
+    image: "images/xiaomi/Xiaomi-Redmi-Note-12Sblack.jpg",
   },
   {
     id: 8,
-    name: "Samsung S24 ULTRA",
+    name: "Redmi A3",
     price: 750000,
-    image: "images/samsung/S24ULRTAGOLD.webp",
+    image: "images/xiaomi/a3black.webp",
   },
   {
     id: 1,
     name: "Nokia 106",
-    price: 50000,
-    image: "images/samsung/Galaxy-A05-۲.jpg",
-    page: "pages/IPHONE/pageip13.html",
+    price: 800,
+    image: "../../images/nokia/106.webp",
+    page: "pageip13.html",
   },
   {
     id: 2,
-    name: "Samsung A05s",
-    price: 75000,
-    image: "images/samsung/05S.webp",
-    page: "pages/IPHONE/page-13pro.html",
+    name: "Nokia 130",
+    price: 1200,
+    image: "../../images/nokia/130-2.webp",
+    page: "page-13pro.html",
   },
   {
     id: 3,
-    name: "Samsung A15",
-    price: 85000,
-    image: "images/samsung/a15.webp",
-    page: "pages/IPHONE/page-13promax.html",
+    name: "Nokia 150",
+    price: 1500,
+    image: "../../images/nokia/nokia150-3.webp",
+    page: "page-13promax.html",
   },
   {
     id: 4,
-    name: "Samsung A25",
-    price: 120000,
-    image: "images/samsung/a25.webp",
+    name: "Nokia 2720 Filip",
+    price: 2000,
+    image: "../../images/nokia/nokia2720-1.webp",
   },
   {
     id: 5,
-    name: "Samsung A35",
-    price: 150000,
-    image: "images/samsung/35.webp",
+    name: "Nokia 6310",
+    price: 1500,
+    image: "../../images/nokia/nokia6310-2.webp",
   },
   {
     id: 6,
-    name: "Samsung A55",
-    price: 200000,
-    image: "images/samsung/a55.webp",
+    name: "Nokia 5310",
+    price: 1500,
+    image: "../../images/nokia/nokia5310-1.webp",
   },
   {
     id: 7,
-    name: "Samsung S23 FE",
-    price: 280000,
-    image: "images/samsung/S23FE.webp",
+    name: "Nokia 6300",
+    price: 1500,
+    image: "../../images/nokia/nokia6300-1.webp",
   },
   {
     id: 8,
-    name: "Samsung S24 ULTRA",
-    price: 750000,
-    image: "images/samsung/S24ULRTAGOLD.webp",
+    name: "Nokia 215",
+    price: 1200,
+    image: "../../images/nokia/nokia215-1.webp",
   },
 ];
-
 
 let cart = {
   item: [],
@@ -237,23 +237,26 @@ const searchProducts = () => {
   const query = document.getElementById("search-input").value.toLowerCase();
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(query)
-);
-randerproduct(filteredProducts);
+  );
+  randerproduct(filteredProducts);
 };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 const randercartitem = () => {
   let cartdiv = document.querySelector(".cart__items");
+
   cartdiv.innerHTML = " ";
   const totalpriceEl = document.querySelector(".cart__total-price");
+  const numCart = document.querySelector(".num-cart");
   let totalprice = 0;
+  let totalqty = 0;
   if (cart.item.length === 0) {
     cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
   }
   cart.item.forEach((item) => {
     totalprice += item.total;
+    totalqty += item.qty;
     cartdiv.innerHTML += `
     <div class="cart__item">
     <div class="col-md-4">
@@ -263,15 +266,16 @@ const randercartitem = () => {
       <div class="qty">${item.qty}</div>
     </div>
     <div class="col-md-4">
-      <h3 class="cart__item-title">${item.name}</h3>
+    <h3 class="cart__item-title">${item.name}</h3>
     </div>
-  </div>
-
+    </div>
+    
     `;
   });
   totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
+  numCart.innerHTML = `${totalqty}`;
+  localStorage.setItem("qyt", totalqty);
 };
-
 
 // TABEE EZAFE KARDAN MAHSOL BE SABAD XARID...
 
@@ -322,9 +326,9 @@ const loadCart = () => {
 // فراخوانی تابع loadCart هنگام بارگذاری صفحه
 window.onload = loadCart;
 
-
 const removelocal = () => {
   localStorage.removeItem("cartbox");
+  localStorage.removeItem("qty");
 };
 
 // TABEE HAZF MAHSOL AZ SABAD XARID
@@ -391,7 +395,6 @@ next.addEventListener("click", (event) => {
     displayObject(currentIndex);
   }
 });
-
 
 // timer ax haye baner
 

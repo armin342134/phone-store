@@ -36,7 +36,7 @@
                 <div class="cart">
                   <a href="cart/cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
-
+                    <span class="num-cart">0</span>
                   </a>
                 </div>
 
@@ -47,9 +47,9 @@
                   <li><a href="../index.html">فروشگاه</a>
                     <ul>
                       <li><a href="../pages/IPHONE/iphone-products.html"  >آیفون</a></li>
-                      <li><a href="#samsung">سامسونگ</a></li>
-                      <li><a href="#xiaomi">شیایومی</a></li>
-                      <li><a href="#nokia">نوکیا</a></li>
+                      <li><a href="../pages/SAMSUNG/samsung-products.html">سامسونگ</a></li>
+                      <li><a href="../pages/xiaomi/xiaomi-products.html">شیایومی</a></li>
+                      <li><a href="../pages/nokia/nokia-products.html">نوکیا</a></li>
                       <li><a href="">هدفون بلوتوثی</a></li>
                       <li><a href="">ساعت هوشمند</a></li>
                     </ul>
@@ -145,12 +145,17 @@
         let cartdiv = document.querySelector(".cart__items");
         cartdiv.innerHTML = " ";
         const totalpriceEl = document.querySelector(".cart__total-price");
+        const numCart = document.querySelector(".num-cart");
+
         let totalprice = 0;
+        let totalqty = 0;
+
         if (cart.item.length === 0) {
           cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
         }
         cart.item.forEach((item) => {
           totalprice += item.total;
+          totalqty += item.qty;
           cartdiv.innerHTML += `
         <div class="cart__item">
         <div class="col-md-4">
@@ -167,6 +172,11 @@
         `;
         });
         totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
+        numCart.innerHTML = `${totalqty}`;
+        localStorage.setItem("qyt", totalqty);
+
+
+
       };
 
       const addtocart = (productindex) => {
@@ -243,7 +253,8 @@
         randercartitem();
       };
       randercartitem();
+            
+           
     </script>
-    <!-- <script src="../app.js"></script> -->
   </body>
 </html>

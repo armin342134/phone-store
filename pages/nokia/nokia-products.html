@@ -29,7 +29,7 @@
                   <div class="cart">
                     <a href="../../cart/cart.html">
                       <i class="fa-solid fa-cart-shopping"></i>
-  
+                      <span class="num-cart">0</span>
                     </a>
                   </div>
   
@@ -40,17 +40,17 @@
                     <li><a href="../../index.html">فروشگاه</a>
                       <ul>
                         <li><a href="../IPHONE/iphone-products.html">آیفون</a></li>
-                        <li><a href="samsung-products.html">سامسونگ</a></li>
-                        <li><a href="xiaomi-products.html">شیایومی</a></li>
-                        <li><a href="#nokia">نوکیا</a></li>
+                        <li><a href="../SAMSUNG/samsung-products.html">سامسونگ</a></li>
+                        <li><a href="../xiaomi/xiaomi-products.html">شیایومی</a></li>
+                        <li><a href="nokia-products.html">نوکیا</a></li>
                         <li><a href="">هدفون بلوتوثی</a></li>
                         <li><a href="">ساعت هوشمند</a></li>
                       </ul>
                     </li>
-                    <li><a href="gesti.html">فروش اقساطی</a></li>
-                    <li><a href="login-page/login-account.html">حساب کاربری</a></li>
-                    <li><a href="cart/cart.html">سبد خرید</a></li>
-                    <li><a href="contact us/contact.html">تماس با ما</a></li>
+                    <li><a href="../../gesti.html">فروش اقساطی</a></li>
+                    <li><a href="../../login-page/login-account.html">حساب کاربری</a></li>
+                    <li><a href="../../cart/cart.html">سبد خرید</a></li>
+                    <li><a href="../../contact us/contact.html">تماس با ما</a></li>
                   </ul>
                 </nav>
                 </div>
@@ -60,8 +60,18 @@
                     <input class="search-input" id="search-input" type="search" placeholder="جستوجوی محصولات ..."   oninput="searchProducts()" >
                 </div>
               </div>
-              <script src="../../app.js"></script>
-    
+              <div class="container">
+                <div class="row" id="iphone">
+                  <div><i class="fas fa-shopping-bag"></i> <h2>محصولات نوکیا </h2></div>
+                  <div class="col-md-12">
+                    <div class="products">
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <div class="footer">
                 <div class="logo-btn">
                   <div class="logo">
@@ -74,16 +84,16 @@
                     </div>
                   </div>
                 </div>
-              
+                
                 <div class="phone">
                   <ul>
                     <li>هفت روز هفته ، ۲۴ ساعت شبانه‌روز پاسخگوی شما هستیم.</li>
                     <li>شماره تلفن: <a href="">09910450537</a></li>
                     <li>اینستاگرام: <a href="">Mobile.salehi_</a></li>
                   </ul>
-              
+                  
                 </div>
-              
+                
                 <div class="footer-services">
                   <div class="services">
                     <div>
@@ -99,226 +109,90 @@
                       </a>
                     </div>
                     <div>  <a href="">
-                        <img src="../../images/iconfinder_currency_dollar_currency_money_4229510.png" alt="">
-                        <span>پرداخت آنلاین</span>
-                      </a></div>
+                      <img src="../../images/iconfinder_currency_dollar_currency_money_4229510.png" alt="">
+                      <span>پرداخت آنلاین</span>
+                    </a></div>
                     <div>  <a href="">
-                        <img src="../../images/iconfinder_ic_round_return_5760423.png" alt="">
-                        <span>۷ روز ضمانت بازگشت</span>
-                      </a></div>
+                      <img src="../../images/iconfinder_ic_round_return_5760423.png" alt="">
+                      <span>۷ روز ضمانت بازگشت</span>
+                    </a></div>
                     <div>  <a href="">
                         <img src="../../images/iconfinder_verified-check-secured-legal-certified_3209199.png" alt="">
                         <span>ضمانت اصل بودن</span>
                       </a></div>
-                  </div>
+                    </div>
                   <div class="etemad">
               <div>
                 <img src="../../images/enamad_icon_text_color_blue_275.png" alt="">
               </div>
-                  </div>
-                </div>
-                <div class="copy-right">
-                  <div>
-                  <p>
-                    استفاده از مطالب فروشگاه اینترنتی موبایل صالحی فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق موبایل صالحی می‌باشد. Copyright © 2022 - 2024
-                    </p>
-                  </div>
-              
-                </div>
-              </div>    
-<script>
-  const products =[ 
+            </div>
+          </div>
+          <div class="copy-right">
+            <div>
+              <p>
+                استفاده از مطالب فروشگاه اینترنتی موبایل صالحی فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق موبایل صالحی می‌باشد. Copyright © 2022 - 2024
+              </p>
+            </div>
+            
+          </div>
+        </div>    
+        <script>
+          const products =[ 
       {
-      id: 1,
-      name: "iPhone 13",
-      price: 500000,
-      image: "../../images/iphone/iphone-13-Apple-3-.jpg",
-      page: "pageip13.html",
-    },
+        id: 1,
+        name: "Nokia 106",
+        price: 800,
+        image: "../../images/nokia/106.webp",
+        page: "pageip13.html",
+      },
     {
       id: 2,
-      name: "iPhone13Pro",
-      price: 750000,
-      image: "../../images/iphone/iphone-13-Pro-Apple-.jpg",
+      name: "Nokia 130",
+      price: 1200,
+      image: "../../images/nokia/130-2.webp",
       page: "page-13pro.html",
     },
     {
       id: 3,
-      name: "iPhone13ProMax",
-      price: 850000,
-      image: "../../images/iphone/iphone-13-Pro-Max-Apple-3-.jpg",
+      name: "Nokia 150",
+      price: 1500,
+      image: "../../images/nokia/nokia150-3.webp",
       page: "page-13promax.html",
     },
     {
       id: 4,
-      name: "iPhone14",
-      price: 750000,
-      image: "../../images/iphone/14BB.webp",
+      name: "Nokia 2720 Filip",
+      price: 2000,
+      image: "../../images/nokia/nokia2720-1.webp",
     },
     {
       id: 5,
-      name: "iPhone14Pro",
-      price: 750000,
-      image: "../../images/iphone/14PRO.webp",
+      name: "Nokia 6310",
+      price: 1500,
+      image: "../../images/nokia/nokia6310-2.webp",
     },
     {
       id: 6,
-      name: "iPhone14ProMax",
-      price: 750000,
-      image: "../../images/iphone/14PROMAX.webp",
+      name: "Nokia 5310",
+      price: 1500,
+      image: "../../images/nokia/nokia5310-1.webp",
     },
     {
       id: 7,
-      name: "iPhone15",
-      price: 480000,
-      image: "../../images/iphone/15B.webp",
+      name: "Nokia 6300",
+      price: 1500,
+      image: "../../images/nokia/nokia6300-1.webp",
     },
     {
       id: 8,
-      name: "iPhone15ProMax",
-      price: 750000,
-      image: "../../images/iphone/15.webp",
+      name: "Nokia 215",
+      price: 1200,
+      image: "../../images/nokia/nokia215-1.webp",
     }
     ] ;
 
 
-  const randerproduct = (filteredProducts) => {
-    const productdiv = document.querySelector(".products");
-     productdiv.innerHTML = " ";
-    filteredProducts.forEach((item, index) => {
-      productdiv.innerHTML += ` 
- <div class="product" >
-<div class="product__image">
-  <img src=${item.image} alt="" />
-</div>
-<a class="product__title" href="${item.page}">${item.name}</a>
-<h3 class="product__price">${item.price} تومان</h3>
-<button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
-</div>
-`;
-    });}
-
-
-// ---------------------------------------------------------------------------------------------------------------------------------------------
-
-// search function
-
-const searchProducts = () => {
-const query = document.getElementById("search-input").value.toLowerCase();
-const filteredProducts = products.filter((product) =>
-product.name.toLowerCase().includes(query)
-);
-randerproduct(filteredProducts);
-};
-
-// ---------------------------------------------------------------------------------------------------------------------------------------------------
-
-  const randercartitem = () => {
-    let cartdiv = document.querySelector(".cart__items");
-    cartdiv.innerHTML = "";
-    const totalpriceEl = document.querySelector(".cart__total-price");
-    let totalprice = 0;
-    if (cart.item.length === 0) {
-      cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
-    }
-    cart.item.forEach((item) => {
-      totalprice += item.total;
-      cartdiv.innerHTML += `
-<div class="cart__item">
-<div class="col-md-4">
-  <button class="cart__item-remove"  onclick="removefromcart( '${item.name}') ;removelocal('${item.name}') ">حذف</button>
-</div>
-<div class="col-md-4">
-  <div class="qty">${item.qty}</div>
-</div>
-<div class="col-md-4">
-  <h3 class="cart__item-title">${item.name}</h3>
-</div>
-</div>
-
-`;
-    });
-    totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
-  };
-
-  const addtocart = (productindex) => {
-    const product = products[productindex];
-
-    let existingProduct = false;
-    let newcartitems = cart.item.reduce((state, item) => {
-      if (item.name === product.name) {
-        existingProduct = true;
-
-        const newitem = {
-          ...item,
-          qty: item.qty + 1,
-          total: (item.qty + 1) * item.price,
-        };
-        return [...state, newitem];
-      }
-      return [...state, item];
-    }, []);
-    if (!existingProduct) {
-      newcartitems.push({
-        ...product,
-        qty: 1,
-        total: product.price,
-      });
-    }
-    cart = {
-      ...cart,
-      item: newcartitems,
-    };
-    localStorage.setItem("cartbox", JSON.stringify(cart));
-  };
-
-  const loadCart = () => {
-    const savedCart = localStorage.getItem("cartbox");
-    if (savedCart) {
-      cart = JSON.parse(savedCart);
-    } else {
-      cart = { item: [] }; // مقدار پیش‌فرض اگر سبد خرید خالی باشد
-    }
-
-    // رندر کردن آیتم‌های سبد خرید
-  };
-
-  // فراخوانی تابع loadCart هنگام بارگذاری صفحه
-  window.onload = loadCart;
-
-  // TABEE EZAFE KARDAN MAHSOL BE SABAD XARID...
-
-  const removelocal = () => {
-    localStorage.removeItem("cartbox");
-  };
-
-  const removefromcart = (productname) => {
-    const newcartitems = cart.item.reduce((state, item) => {
-      if (item.name === productname) {
-        const newitem = {
-          ...item,
-          qty: item.qty - 1,
-          total: (item.qty - 1) * item.price,
-        };
-        if (newitem.qty > 0) {
-          return [...state, newitem];
-        } else {
-          return state;
-        }
-      }
-      return [...state, item];
-    }, []);
-    cart = {
-      ...cart,
-      item: newcartitems,
-    };
-    randercartitem();
-  };
-
-  // TABEE HAZF MAHSOL AZ SABAD XARID
-  randerproduct(products);
-  randerproductsam(products)
-
 </script>
+<script src="../../common-app.js"></script>
 </body>
 </html>

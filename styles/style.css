@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 @font-face {
@@ -122,6 +121,15 @@ body {
   cursor: pointer;
   padding-right: 10px;
 }
+.item-left .cart span {
+  color: white;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+}
 .menu {
   background-color: rgb(54, 54, 51);
 }
@@ -156,7 +164,7 @@ body {
 
 .baner-img {
   width: 100%;
-  height: auto;
+  height: 590px;
 }
 
 .btn-baner {
@@ -314,7 +322,8 @@ body {
 }
 .footer {
   height: 800px;
-  background-color: #282222;
+  width: 100%;
+  background-color: #131a22;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
