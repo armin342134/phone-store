@@ -52,155 +52,155 @@ const products = [
   },
 
   {
-    id: 1,
+    id: 9,
     name: "Samsung A05",
     price: 50000,
     image: "images/samsung/Galaxy-A05-۲.jpg",
     page: "pages/IPHONE/pageip13.html",
   },
   {
-    id: 2,
+    id: 10,
     name: "Samsung A05s",
     price: 75000,
     image: "images/samsung/05S.webp",
     page: "pages/IPHONE/page-13pro.html",
   },
   {
-    id: 3,
+    id: 11,
     name: "Samsung A15",
     price: 85000,
     image: "images/samsung/a15.webp",
     page: "pages/IPHONE/page-13promax.html",
   },
   {
-    id: 4,
+    id: 12,
     name: "Samsung A25",
     price: 120000,
     image: "images/samsung/a25.webp",
   },
   {
-    id: 5,
+    id: 13,
     name: "Samsung A35",
     price: 150000,
     image: "images/samsung/35.webp",
   },
   {
-    id: 6,
+    id: 14,
     name: "Samsung A55",
     price: 200000,
     image: "images/samsung/a55.webp",
   },
   {
-    id: 7,
+    id: 15,
     name: "Samsung S23 FE",
     price: 280000,
     image: "images/samsung/S23FE.webp",
   },
   {
-    id: 8,
+    id: 16,
     name: "Samsung S24 ULTRA",
     price: 750000,
     image: "images/samsung/S24ULRTAGOLD.webp",
   },
   {
-    id: 1,
+    id: 17,
     name: "Xiaomi Note 13Pro",
     price: 50000,
     image: "images/xiaomi/note13problack.webp",
     page: "pages/IPHONE/pageip13.html",
   },
   {
-    id: 2,
+    id: 18,
     name: "Xiaomi Note13",
     price: 75000,
     image: "images/xiaomi/note13blue.webp",
     page: "pages/IPHONE/page-13pro.html",
   },
   {
-    id: 3,
+    id: 19,
     name: "Xiaomi Poco C65",
     price: 85000,
     image: "images/xiaomi/pococ65black.webp",
     page: "pages/IPHONE/page-13promax.html",
   },
   {
-    id: 4,
+    id: 20,
     name: "Xiaomi Poco x6",
     price: 120000,
     image: "images/xiaomi/pocox6blue.webp",
   },
   {
-    id: 5,
+    id: 21,
     name: "Redmi 12",
     price: 150000,
     image: "images/xiaomi/redmin12white.jpg",
   },
 
   {
-    id: 6,
+    id: 22,
     name: "Redmin Pad Se",
     price: 200000,
     image: "images/xiaomi/redminpad1.jpg",
   },
   {
-    id: 7,
+    id: 23,
     name: "Xiaomi Note 12s",
     price: 280000,
     image: "images/xiaomi/Xiaomi-Redmi-Note-12Sblack.jpg",
   },
   {
-    id: 8,
+    id: 24,
     name: "Redmi A3",
     price: 750000,
     image: "images/xiaomi/a3black.webp",
   },
   {
-    id: 1,
+    id: 25,
     name: "Nokia 106",
     price: 800,
     image: "../../images/nokia/106.webp",
     page: "pageip13.html",
   },
   {
-    id: 2,
+    id: 26,
     name: "Nokia 130",
     price: 1200,
     image: "../../images/nokia/130-2.webp",
     page: "page-13pro.html",
   },
   {
-    id: 3,
+    id: 27,
     name: "Nokia 150",
     price: 1500,
     image: "../../images/nokia/nokia150-3.webp",
     page: "page-13promax.html",
   },
   {
-    id: 4,
+    id: 28,
     name: "Nokia 2720 Filip",
     price: 2000,
     image: "../../images/nokia/nokia2720-1.webp",
   },
   {
-    id: 5,
+    id: 29,
     name: "Nokia 6310",
     price: 1500,
     image: "../../images/nokia/nokia6310-2.webp",
   },
   {
-    id: 6,
+    id: 30,
     name: "Nokia 5310",
     price: 1500,
     image: "../../images/nokia/nokia5310-1.webp",
   },
   {
-    id: 7,
+    id: 31,
     name: "Nokia 6300",
     price: 1500,
     image: "../../images/nokia/nokia6300-1.webp",
   },
   {
-    id: 8,
+    id: 32,
     name: "Nokia 215",
     price: 1200,
     image: "../../images/nokia/nokia215-1.webp",
@@ -215,8 +215,12 @@ let cart = {
 const randerproduct = (filteredProducts) => {
   const productdiv = document.querySelector(".products");
   productdiv.innerHTML = " ";
+  //-------------------------------------------------------------------------------------------------------------------------
+
   filteredProducts.forEach((item, index) => {
-    productdiv.innerHTML += ` 
+    const productItem = document.createElement("div");
+    productItem.classList.add("product");
+    productdiv.innerHTML += `
      <div class="product" >
     <div class="product__image">
       <img class="cart-img  store-img" src=${item.image} alt="" />
@@ -260,7 +264,7 @@ const randercartitem = () => {
     cartdiv.innerHTML += `
     <div class="cart__item">
     <div class="col-md-4">
-      <button class="cart__item-remove"  onclick="removefromcart( '${item.name}') ;removelocal('${item.name}') ">حذف</button>
+      <button class="cart__item-remove"  onclick="removefromcart( '${item.name}') ,removeProduct('${item.id}') ">حذف</button>
     </div>
     <div class="col-md-4">
       <div class="qty">${item.qty}</div>
@@ -307,8 +311,8 @@ const addtocart = (productindex) => {
     ...cart,
     item: newcartitems,
   };
-  localStorage.setItem("cartbox", JSON.stringify(cart));
   randercartitem();
+  localStorage.setItem("cartbox", JSON.stringify(cart));
 };
 
 const loadCart = () => {
@@ -326,10 +330,26 @@ const loadCart = () => {
 // فراخوانی تابع loadCart هنگام بارگذاری صفحه
 window.onload = loadCart;
 
+const savedCart = (cart) => {
+  localStorage.setItem("cartbox", JSON.stringify(cart));
+};
+
+//تابع حذف آرایه ها از  local storage
+
+function removeProduct(id) {
+  let local = JSON.parse(localStorage.getItem("cartbox"));
+  let cart = local.item;
+  cart = cart.filter((item) => item.id !== id);
+  local.item = cart;
+  localStorage.setItem("cartbox", JSON.stringify(local));
+}
+
 const removelocal = () => {
   localStorage.removeItem("cartbox");
   localStorage.removeItem("qty");
 };
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 // TABEE HAZF MAHSOL AZ SABAD XARID
 
@@ -354,6 +374,7 @@ const removefromcart = (productname) => {
     item: newcartitems,
   };
   randercartitem();
+  localStorage.setItem("cartbox", JSON.stringify(cart));
 };
 
 randerproduct(products);
