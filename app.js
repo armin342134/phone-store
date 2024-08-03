@@ -133,7 +133,7 @@ const products = [
     id: 21,
     name: "Redmi 12",
     price: 150000,
-    image: "images/xiaomi/redmin12white.jpg",
+    image: "images/xiaomi/redmi12blue.jpg",
   },
 
   {
@@ -214,13 +214,19 @@ let cart = {
 
 const randerproduct = (filteredProducts) => {
   const productdiv = document.querySelector(".products");
+  const productsam = document.querySelector(".products-sam");
+  const productsxiaomi = document.querySelector(".products-xiaomi");
+  const productsnokia = document.querySelector(".products-nokia");
+
   productdiv.innerHTML = " ";
-  //-------------------------------------------------------------------------------------------------------------------------
+  productsam.innerHTML = " ";
+  productsxiaomi.innerHTML = " ";
+  productsnokia.innerHTML = " ";
+  // //-------------------------------------------------------------------------------------------------------------------------
 
   filteredProducts.forEach((item, index) => {
-    const productItem = document.createElement("div");
-    productItem.classList.add("product");
-    productdiv.innerHTML += `
+    if (item.id <= 8) {
+      productdiv.innerHTML += `
      <div class="product" >
     <div class="product__image">
       <img class="cart-img  store-img" src=${item.image} alt="" />
@@ -230,6 +236,40 @@ const randerproduct = (filteredProducts) => {
     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
   </div>
   `;
+    } else if (item.id > 8 && item.id <= 16) {
+      productsam.innerHTML += `
+     <div class="product" >
+    <div class="product__image">
+      <img class="cart-img  store-img" src=${item.image} alt="" />
+    </div>
+    <a class="product__title" href="${item.page}">${item.name}</a>
+    <h3 class="product__price">${item.price} تومان</h3>
+    <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+  </div>
+  `;
+    } else if (item.id > 16 && item.id <= 24) {
+      productsxiaomi.innerHTML += `
+      <div class="product" >
+     <div class="product__image">
+       <img class="cart-img  store-img" src=${item.image} alt="" />
+     </div>
+     <a class="product__title" href="${item.page}">${item.name}</a>
+     <h3 class="product__price">${item.price} تومان</h3>
+     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+   </div>
+   `;
+    } else if (item.id > 24 && item.id <= 32) {
+      productsnokia.innerHTML += `
+      <div class="product" >
+     <div class="product__image">
+       <img class="cart-img  store-img" src=${item.image} alt="" />
+     </div>
+     <a class="product__title" href="${item.page}">${item.name}</a>
+     <h3 class="product__price">${item.price} تومان</h3>
+     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+   </div>
+   `;
+    }
   });
 };
 
