@@ -206,7 +206,7 @@ body {
 }
 
 .products,
-.products-samsung,
+.products-sam,
 .products-xiaomi,
 .products-nokia {
   width: 100%;
@@ -328,6 +328,7 @@ body {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
+  overflow: visible;
 }
 .logo-btn {
   display: flex;
@@ -396,6 +397,7 @@ body {
 
 .footer-services {
   height: 50%;
+  width: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -474,10 +476,6 @@ body {
     height: 200px;
     width: 50%;
   }
-  .footer {
-    height: 200px;
-    width: 25%;
-  }
 }
 @media screen and (min-width: 992px) {
   .product {
@@ -489,10 +487,6 @@ body {
   }
   .container-header {
     height: 80px;
-    width: 100%;
-  }
-  .footer {
-    height: 800px;
     width: 100%;
   }
 }
