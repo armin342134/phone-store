@@ -154,10 +154,13 @@ body {
   visibility: hidden;
   position: absolute;
   transition: all 2s ease-in-out;
-  background-color: rgb(10, 10, 9);
+  background-color: rgb(40, 34, 34);
   display: flex;
   flex-direction: column;
   z-index: 1;
+  width: 200px;
+  height: 500px;
+  border-radius: 5px;
 }
 .menu .nav-menu ul li:hover ul {
   visibility: visible;
@@ -166,7 +169,7 @@ body {
   overflow: visible;
 }
 .baner:hover .btn-baner {
-  display: block;
+  visibility: visible;
 }
 
 .baner-img {
@@ -175,7 +178,7 @@ body {
 }
 
 .btn-baner {
-  /* display: none; */
+  visibility: hidden;
   margin-right: 10px;
   position: absolute;
   bottom: 0;

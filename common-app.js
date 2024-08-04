@@ -1,3 +1,8 @@
+let cart = {
+  item: [],
+  total: 0,
+};
+
 const randerproduct = (filteredProducts) => {
   const productdiv = document.querySelector(".products");
   productdiv.innerHTML = " ";
@@ -28,44 +33,19 @@ const searchProducts = () => {
 };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------
+const numCart = document.querySelector(".num-cart");
+let allqyt = JSON.parse(localStorage.getItem("qyt"));
+numCart.innerHTML = allqyt;
 
 const randercartitem = () => {
-  let cartdiv = document.querySelector(".cart__items");
-  cartdiv.innerHTML = " ";
-  const totalpriceEl = document.querySelector(".cart__total-price");
-  const numCart = document.querySelector(".num-cart");
-  let totalprice = 0;
   var totalqty = 0;
-  if (cart.item.length === 0) {
-    cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
-  }
   cart.item.forEach((item) => {
-    totalprice += item.total;
     totalqty += item.qty;
-    cartdiv.innerHTML += `
-    <div class="cart__item">
-    <div class="col-md-4">
-      <button class="cart__item-remove"  onclick="removefromcart( '${item.name}') ;removelocal('${item.name}') ">حذف</button>
-    </div>
-    <div class="col-md-4">
-      <div class="qty">${item.qty}</div>
-    </div>
-    <div class="col-md-4">
-    <h3 class="cart__item-title">${item.name}</h3>
-    </div>
-    </div>
-    
-    `;
   });
-  totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
   numCart.innerHTML = `${totalqty}`;
   localStorage.setItem("qyt", totalqty);
 };
 // ----------------------------------------------------------------------------------------------------------------------------------------------------
-const numCart = document.querySelector(".num-cart");
-let qyt = localStorage.getItem("qyt");
-numCart.innerHTML = Number(qyt);
-console.log(typeof qyt);
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -97,6 +77,7 @@ const addtocart = (productindex) => {
     ...cart,
     item: newcartitems,
   };
+  randercartitem();
   localStorage.setItem("cartbox", JSON.stringify(cart));
 };
 

@@ -419,7 +419,6 @@ const removefromcart = (productname) => {
 
 randerproduct(products);
 
-// TA IN GESMAT SAKHT SABAD XARID VE EZAFE KARDAN MAHSOL...
 
 let baner = document.querySelector(".baner");
 let previusbtn = document.querySelector(".previus-btn");

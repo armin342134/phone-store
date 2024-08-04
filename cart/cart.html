@@ -48,7 +48,7 @@
                     <ul>
                       <li><a href="../pages/IPHONE/iphone-products.html"  >آیفون</a></li>
                       <li><a href="../pages/SAMSUNG/samsung-products.html">سامسونگ</a></li>
-                      <li><a href="../pages/xiaomi/xiaomi-products.html">شیایومی</a></li>
+                      <li><a href="../pages/xiaomi/xiaomi-products.html">شیائومی</a></li>
                       <li><a href="../pages/nokia/nokia-products.html">نوکیا</a></li>
                       <li><a href="">هدفون بلوتوثی</a></li>
                       <li><a href="">ساعت هوشمند</a></li>
@@ -159,7 +159,7 @@
           cartdiv.innerHTML += `
         <div class="cart__item">
         <div class="col-md-4">
-          <button class="cart__item-remove"  onclick="removefromcart( '${item.name}' ) ; removelocal('${item.name}')">حذف</button>
+          <button class="cart__item-remove"  onclick="removefromcart( '${item.name}' ) ; removeProduct('${item.id}')">حذف</button>
         </div>
         <div class="col-md-4">
           <div class="qty">${item.qty}</div>
@@ -225,10 +225,17 @@
 
       // فراخوانی تابع loadCart هنگام بارگذاری صفحه
       window.onload = loadCart();
+      //تابع حذف آرایه ها از  local storage
 
-      const removelocal = () => {
-        localStorage.removeItem("cartbox");
-      };
+function removeProduct(id) {
+  let local = JSON.parse(localStorage.getItem("cartbox"));
+  let cart = local.item;
+  cart = cart.filter((item) => item.id !== id);
+  local.item = cart;
+  localStorage.setItem("cartbox", JSON.stringify(local));
+}
+
+
 
       const removefromcart = (productname) => {
         const newcartitems = cart.item.reduce((state, item) => {
@@ -251,8 +258,9 @@
           item: newcartitems,
         };
         randercartitem();
+        localStorage.setItem("cartbox", JSON.stringify(cart));
+
       };
-      randercartitem();
             
            
     </script>
