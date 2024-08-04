@@ -37,6 +37,8 @@ body {
   flex-direction: row;
   color: yellow;
   align-items: center;
+  justify-content: space-between;
+  width: 180px;
   padding: 10px;
 }
 .item-right a {
@@ -44,7 +46,6 @@ body {
   color: yellow;
 }
 .item-right i {
-  margin: 10px;
   font-size: 30px;
 }
 
@@ -66,9 +67,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 10px;
-  margin: 15px;
+  margin: 15px 0px;
   padding: 5px;
   width: 50%;
   height: 50px;
@@ -78,22 +79,17 @@ body {
 }
 .search-form input {
   border: none;
-  margin-right: 15px;
   outline: none;
 }
 
-.item-center .select {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-}
 .item-left {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   overflow: hidden;
+  width: 300px;
 }
 .item-left .cart {
   width: 60px;
@@ -128,16 +124,28 @@ body {
 }
 .menu {
   background-color: rgb(54, 54, 51);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.nav-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .nav-menu ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 .menu ul li {
   list-style-type: none;
-  padding: 15px 50px;
+  /* padding: 15px 50px; */
 }
 .menu ul li a {
   text-decoration: none;
@@ -267,13 +275,21 @@ body {
   font: inherit;
   padding: 1rem 1.6rem;
 }
+.col-md-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
 
 .cart {
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
   width: 90%;
   text-align: center;
   padding: 1rem;
-  margin: 67px;
+  /* margin: 67px; */
   border-radius: 5px;
 }
 
@@ -311,38 +327,26 @@ body {
   margin-top: 8rem;
 }
 
-.samsung {
-  border: 1px solid #eeeeee;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 10px;
-  padding: 10px;
-  width: 20%;
-  border-radius: 3px;
-}
 .footer {
+  display: flex;
+  flex-direction: column;
   height: 800px;
   width: 100%;
   background-color: #131a22;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
   overflow: visible;
 }
 .logo-btn {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 20%;
 }
 .logo {
-  margin-right: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 230px;
 }
 .logo i {
   font-size: 50px;
@@ -351,12 +355,10 @@ body {
 }
 .logo h1 {
   font-size: 30px;
-  margin-right: 15px;
   overflow: visible;
   color: #ffffff;
 }
 .btn-up {
-  margin-left: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -402,6 +404,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  border-bottom: solid 1px white;
 }
 .services {
   display: flex;
@@ -409,8 +412,6 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 70%;
-  margin-right: 150px;
-  border-bottom: solid 1px white;
 }
 .services div a {
   display: flex;
@@ -432,16 +433,17 @@ body {
   display: flex;
   flex-direction: row;
   width: 30%;
+  align-items: center;
+  justify-content: center;
 }
 .etemad div {
   display: flex;
   flex-direction: row;
-  width: 100%;
   justify-content: flex-start;
   align-items: center;
 }
 .etemad div img {
-  height: 150px;
+  height: 120px;
   width: 150px;
 }
 .copy-right {
