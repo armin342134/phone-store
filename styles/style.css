@@ -339,14 +339,14 @@ body {
 .logo-btn {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 20%;
 }
 .logo {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width: 230px;
+  width: 250px;
 }
 .logo i {
   font-size: 50px;
@@ -362,6 +362,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 180px;
 }
 
 .btn-up div {
@@ -369,7 +370,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #eeeeee;
-  width: 280px;
+  width: 150px;
   height: 40px;
   border-radius: 10px;
   cursor: pointer;
