@@ -48,11 +48,6 @@ body {
   font-size: 30px;
 }
 
-/* .item-center { */
-/* display: flex;
-  flex-direction: column;
-  align-items: center; */
-/* } */
 .item-center i {
   font-size: 20px;
 }
@@ -162,6 +157,9 @@ body {
 .baner {
   overflow: visible;
 }
+.baner:hover .btn-baner {
+  display: block;
+}
 
 .baner-img {
   width: 100%;
@@ -169,7 +167,11 @@ body {
 }
 
 .btn-baner {
+  /* display: none; */
   margin-right: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
 }
 .btn-baner button {
   width: 50px;
