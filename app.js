@@ -133,7 +133,7 @@ const products = [
     id: 21,
     name: "Redmi 12",
     price: 150000,
-    image: "images/xiaomi/redmin12white.jpg",
+    image: "images/xiaomi/redmi12blue.jpg",
   },
 
   {
