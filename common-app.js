@@ -32,7 +32,7 @@ const searchProducts = () => {
   randerproduct(filteredProducts);
 };
 
-// ---------------------------------------------------------------------------------------------------------------------------------------------------
+// -------------------------add to qyt--------------------------------------------------------------------------------------------------------------------------
 const numCart = document.querySelector(".num-cart");
 let allqyt = JSON.parse(localStorage.getItem("qyt"));
 numCart.innerHTML = allqyt;
