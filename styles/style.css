@@ -145,7 +145,6 @@ body {
 }
 .menu ul li {
   list-style-type: none;
-  /* padding: 15px 50px; */
 }
 .menu ul li a {
   text-decoration: none;
@@ -165,6 +164,44 @@ body {
 .menu .nav-menu ul li:hover ul {
   visibility: visible;
 }
+.sub {
+  background-color: black;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 1s;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.btn {
+  font-size: 30px;
+  margin: 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+}
+.close::after {
+  content: "\002716 ";
+}
+
+.open::after {
+  content: "\002630";
+}
+
+.show {
+  width: 250px;
+  transition: all 1s;
+  visibility: visible;
+}
+.sub h2 {
+  color: white;
+  text-align: center;
+}
+
 .baner {
   overflow: visible;
 }
@@ -331,6 +368,7 @@ body {
 }
 
 .footer {
+  visibility: visible;
   display: flex;
   flex-direction: column;
   height: 800px;
@@ -476,25 +514,23 @@ body {
   .product {
     width: 50%;
   }
-  .baner-img {
-    width: 100%;
-    height: 20%;
-  }
-  .container-header {
-    height: 200px;
-    width: 50%;
-  }
 }
+
 @media screen and (min-width: 992px) {
   .product {
     width: 23%;
   }
-  .baner-img {
-    width: 100%;
-    height: 598px;
+}
+
+@media screen and (max-width: 500px) {
+  .footer,
+  .nav-menu {
+    visibility: hidden;
   }
-  .container-header {
-    height: 80px;
-    width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .container-sub {
+    visibility: hidden;
   }
 }

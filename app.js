@@ -419,6 +419,8 @@ const removefromcart = (productname) => {
 
 randerproduct(products);
 
+// timer ax haye baner
+
 let baner = document.querySelector(".baner");
 let previusbtn = document.querySelector(".previus-btn");
 let next = document.querySelector(".next-btn");
@@ -455,8 +457,7 @@ next.addEventListener("click", (event) => {
   }
 });
 
-// timer ax haye baner
-
+// VE IN GESMAT TA INJA SAKHT BANER PAYIN MENU
 let currentIndexImg = 0;
 const imageElement = document.getElementById("baner-img");
 function changeimage() {
@@ -465,11 +466,19 @@ function changeimage() {
 }
 setInterval(changeimage, 3000);
 
-// VE IN GESMAT TA INJA SAKHT BANER PAYIN MENU
+// CODE DOKME VOROD BE HESAB KARBARI
 
 let loginBtn = document.querySelector(".login-btn");
 loginBtn.addEventListener("click", () => {
   open("login-page/login-account.html", "_top");
 });
 
-// CODE DOKME VOROD BE HESAB KARBARI
+//ساخت ساب منو
+
+const btn = document.querySelector(".btn");
+const sub = document.querySelector(".sub");
+
+btn.addEventListener("click", function () {
+  btn.classList.toggle("open");
+  sub.classList.toggle("show");
+});
