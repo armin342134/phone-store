@@ -419,7 +419,6 @@ const removefromcart = (productname) => {
 
 randerproduct(products);
 
-
 let baner = document.querySelector(".baner");
 let previusbtn = document.querySelector(".previus-btn");
 let next = document.querySelector(".next-btn");
