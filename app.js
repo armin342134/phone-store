@@ -482,3 +482,12 @@ btn.addEventListener("click", function () {
   btn.classList.toggle("open");
   sub.classList.toggle("show");
 });
+
+// دکمه + ساب منو
+
+const plus = document.getElementById("plus");
+const storeUl = document.querySelector(".store-ul");
+
+plus.addEventListener("click", function () {
+  storeUl.classList.toggle("store-ul-show");
+});
