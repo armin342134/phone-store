@@ -165,7 +165,8 @@ body {
   visibility: visible;
 }
 .sub {
-  background-color: black;
+  white-space: nowrap;
+  background-color: rgb(40, 34, 34);
   height: 100%;
   width: 0;
   position: fixed;
@@ -174,6 +175,7 @@ body {
   transition: all 1s;
   z-index: 1;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .btn {
@@ -530,6 +532,9 @@ body {
 }
 
 @media screen and (min-width: 500px) {
+  * {
+    overflow-x: visible;
+  }
   .container-sub {
     visibility: hidden;
   }
