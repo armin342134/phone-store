@@ -188,6 +188,7 @@ body {
   background-color: transparent;
 }
 .close::after {
+  color: white;
   content: "\002716 ";
 }
 
