@@ -225,55 +225,62 @@ const randerproduct = (filteredProducts) => {
   // //-------------------------------------------------------------------------------------------------------------------------
 
   filteredProducts.forEach((item, index) => {
+    item.price = item.price.toLocaleString("en-US");
     if (item.id <= 8) {
       productdiv.innerHTML += `
-     <div class="product" >
-    <div class="product__image">
+      <div class="product" >
+      <div class="product__image">
       <img class="cart-img  store-img" src=${item.image} alt="" />
-    </div>
-    <a class="product__title" href="${item.page}">${item.name}</a>
+      </div>
+      <a class="product__title" href="${item.page}">${item.name}</a>
     <h3 class="product__price">${item.price} تومان</h3>
     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
-  </div>
-  `;
+    </div>
+    `;
     } else if (item.id > 8 && item.id <= 16) {
       productsam.innerHTML += `
-     <div class="product" >
+    <div class="product" >
     <div class="product__image">
-      <img class="cart-img  store-img" src=${item.image} alt="" />
+    <img class="cart-img  store-img" src=${item.image} alt="" />
     </div>
     <a class="product__title" href="${item.page}">${item.name}</a>
     <h3 class="product__price">${item.price} تومان</h3>
     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
-  </div>
-  `;
+    </div>
+    `;
     } else if (item.id > 16 && item.id <= 24) {
       productsxiaomi.innerHTML += `
-      <div class="product" >
-     <div class="product__image">
-       <img class="cart-img  store-img" src=${item.image} alt="" />
-     </div>
-     <a class="product__title" href="${item.page}">${item.name}</a>
-     <h3 class="product__price">${item.price} تومان</h3>
-     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
-   </div>
-   `;
+    <div class="product" >
+    <div class="product__image">
+    <img class="cart-img  store-img" src=${item.image} alt="" />
+    </div>
+    <a class="product__title" href="${item.page}">${item.name}</a>
+    <h3 class="product__price">${item.price} تومان</h3>
+    <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+    </div>
+    `;
     } else if (item.id > 24 && item.id <= 32) {
       productsnokia.innerHTML += `
       <div class="product" >
-     <div class="product__image">
-       <img class="cart-img  store-img" src=${item.image} alt="" />
-     </div>
-     <a class="product__title" href="${item.page}">${item.name}</a>
-     <h3 class="product__price">${item.price} تومان</h3>
-     <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
-   </div>
-   `;
+      <div class="product__image">
+      <img class="cart-img  store-img" src=${item.image} alt="" />
+      </div>
+      <a class="product__title" href="${item.page}">${item.name}</a>
+      <h3 class="product__price">${item.price} تومان</h3>
+      <button class="add-to-cart" onclick="addtocart(${index})">افزودن به سبد خرید</button>
+      </div>
+      `;
     }
   });
 };
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
+
+//تابع جدا کردن کاما از قیمت های محصول
+
+function addCommas(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 // search function
 
@@ -299,6 +306,8 @@ const randercartitem = () => {
     cartdiv.innerHTML = " محصولی در سبد وجود ندارد";
   }
   cart.item.forEach((item) => {
+    item.total = parseInt(item.price.replace(/,/g, ""));
+
     totalprice += item.total;
     totalqty += item.qty;
     cartdiv.innerHTML += `
@@ -316,7 +325,7 @@ const randercartitem = () => {
     
     `;
   });
-  totalpriceEl.innerHTML = `مجموع ${totalprice} تومان`;
+  totalpriceEl.innerHTML = `مجموع ${totalprice.toLocaleString("en-US")} تومان`;
   numCart.innerHTML = `${totalqty}`;
   localStorage.setItem("qyt", totalqty);
 };
@@ -491,3 +500,11 @@ const storeUl = document.querySelector(".store-ul");
 plus.addEventListener("click", function () {
   storeUl.classList.toggle("store-ul-show");
 });
+
+// تابع جدا کننده صفر قیمت ها
+console.log(products[3].price);
+function formatinput() {
+  var clean = input.value.replace(/[^0-9]/g, "");
+  var formatvalue = clean.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  input.value = formatvalue;
+}
